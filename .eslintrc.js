@@ -1,0 +1,65 @@
+module.exports = {
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    project: "./tsconfig.json",
+    ecmaVersion: 2018,
+    sourceType: "module",
+  },
+  plugins: ["@typescript-eslint", "eslint-plugin-jest"],
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:eslint-plugin-jest/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+  ],
+  rules: {
+    "no-magic-numbers": "off",
+    "@typescript-eslint/array-type": ["error", "array-simple"],
+    "@typescript-eslint/await-thenable": "error",
+    "@typescript-eslint/explicit-member-accessibility": [
+      "warn",
+      { accessibility: "no-public" },
+    ],
+    "@typescript-eslint/explicit-function-return-type": [
+      "warn",
+      {
+        allowExpressions: true,
+        allowTypedFunctionExpressions: true,
+      },
+    ],
+    "@typescript-eslint/generic-type-naming": ["error", "^T[A-Z][a-zA-Z]+$"],
+    "@typescript-eslint/member-ordering": "warn",
+    "@typescript-eslint/no-extraneous-class": "error",
+    "@typescript-eslint/no-inferrable-types": [
+      "error",
+      { ignoreProperties: true },
+    ],
+    "@typescript-eslint/no-magic-numbers": [
+      "error",
+      { ignoreNumericLiteralTypes: true },
+    ],
+    "@typescript-eslint/no-parameter-properties": "off",
+    "@typescript-eslint/no-this-alias": ["error", { allowDestructuring: true }],
+    "@typescript-eslint/no-type-alias": [
+      "error",
+      {
+        allowAliases: "in-unions-and-intersections",
+        allowCallbacks: "always",
+        allowLiterals: "always",
+        allowMappedTypes: "always",
+      },
+    ],
+    "@typescript-eslint/no-unnecessary-type-assertion": "warn",
+    "@typescript-eslint/no-useless-constructor": "error",
+    "@typescript-eslint/prefer-for-of": "error",
+    "@typescript-eslint/prefer-function-type": "error",
+    "@typescript-eslint/prefer-includes": "error",
+    "@typescript-eslint/prefer-string-starts-ends-with": "error",
+    "@typescript-eslint/promise-function-async": "warn",
+    "@typescript-eslint/restrict-plus-operands": "error",
+    "@typescript-eslint/unbound-method": "error",
+    "@typescript-eslint/unified-signatures": "error",
+  },
+};
